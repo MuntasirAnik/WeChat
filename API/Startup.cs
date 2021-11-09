@@ -39,11 +39,11 @@ namespace API
             services.AddApplicationServices(_config);
             services.AddControllers();
 
-           /* services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
-            });
-            */
+            services.AddSwaggerGen(c =>
+             {
+                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
+             });
+             
 
             services.AddCors();
             services.AddIdentityServices(_config);
@@ -59,7 +59,7 @@ namespace API
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
             }
 
-            app.UseHttpsRedirection();  
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 
